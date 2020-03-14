@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace InterfacesCsharp8
 {
@@ -41,6 +42,17 @@ namespace InterfacesCsharp8
         bool IsOn();
     }
 
+    public interface ITimerLigth: ILight
+    {
+        public async Task TurnOnFor(int duration)
+        {
+            Console.Write("Using the default method for ItimerLight.TurnOnFor");
+            SwitchOn();
+            await Task.Delay(duration);
+            SwitchOff();
+            Console.Write("Completed ItimerLight.TurnOnFor sequence");
+        }
+    }
     #endregion
 
     public class OverheadLight : ILight
