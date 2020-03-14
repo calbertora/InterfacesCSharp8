@@ -11,7 +11,12 @@ namespace InterfacesCsharp8
         DateTime? LastOrder { get; }
         string Name {get;}
         IDictionary<DateTime,string> Reminders {get;}
+    }
 
+    public interface IOrder
+    {
+        DateTime Purchased {get;}
+        decimal Coist {get;}
     }
     class Program
     {
